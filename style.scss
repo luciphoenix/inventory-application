@@ -1,0 +1,51 @@
+// varaibles
+$search-bar-color: #ff8800;
+
+header {
+  border: 1px solid rgb(233, 231, 231);
+  & > :last-child {
+    background-color: rgb(214 80 80 / 5%);
+  }
+  & a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.781);
+    font-size: 0.9rem;
+    &.logo {
+      color: $search-bar-color;
+      font-weight: 500;
+      letter-spacing: 2px;
+      font-size: large;
+    }
+
+    &:hover {
+      color: $search-bar-color;
+    }
+  }
+}
+
+nav {
+  font-size: 0.95rem;
+}
+input[type="search"] {
+  border-radius: 20px 0 0 20px;
+  border: 2px solid $search-bar-color;
+  border-right: 0px solid transparent;
+  font-size: 0.95rem;
+  &:focus {
+    box-shadow: none;
+    border: 2px solid $search-bar-color;
+  }
+}
+
+.btn {
+  background-color: $search-bar-color;
+  border: 2px solid $search-bar-color;
+  border-radius: 0 20px 20px 0;
+  color: #fdfbf1;
+}
+
+// icons
+i {
+  transform: scale(1.2);
+  vertical-align: middle;
+}

@@ -1,8 +1,47 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+header {
+  border: 1px solid rgb(233, 231, 231);
+}
+header > :last-child {
+  background-color: rgba(214, 80, 80, 0.05);
+}
+header a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.781);
+  font-size: 0.9rem;
+}
+header a.logo {
+  color: #ff8800;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: large;
+}
+header a:hover {
+  color: #ff8800;
 }
 
-a {
-  color: #00B7FF;
+nav {
+  font-size: 0.95rem;
+}
+
+input[type=search] {
+  border-radius: 20px 0 0 20px;
+  border: 2px solid #ff8800;
+  border-right: 0px solid transparent;
+  font-size: 0.95rem;
+}
+input[type=search]:focus {
+  box-shadow: none;
+  border: 2px solid #ff8800;
+}
+
+.btn {
+  background-color: #ff8800;
+  border: 2px solid #ff8800;
+  border-radius: 0 20px 20px 0;
+  color: #fdfbf1;
+}
+
+i {
+  transform: scale(1.2);
+  vertical-align: middle;
 }

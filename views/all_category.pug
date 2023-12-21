@@ -1,0 +1,8 @@
+extends layout
+block content
+    h1 CATEGORIES 
+    each val in categories 
+        li
+            a(href=val.url) #{val.category_name} 
+    else 
+        p No item in Stock
