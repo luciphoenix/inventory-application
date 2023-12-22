@@ -1,5 +1,6 @@
 header {
   border: 1px solid rgb(233, 231, 231);
+  background-color: rgba(255, 255, 255, 0.9647058824);
 }
 header > :last-child {
   background-color: rgba(214, 80, 80, 0.05);
@@ -44,4 +45,16 @@ input[type=search]:focus {
 i {
   transform: scale(1.2);
   vertical-align: middle;
+}
+
+body {
+  background-color: rgba(187, 183, 183, 0.18);
+}
+
+aside {
+  background-color: #fff;
+}
+
+main {
+  background-color: #fff;
 }
