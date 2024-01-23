@@ -19,6 +19,12 @@ header a.logo {
 header a:hover {
   color: #ff8800;
 }
+header .btn {
+  background-color: #ff8800;
+  border: 2px solid #ff8800;
+  border-radius: 0 20px 20px 0;
+  color: #fdfbf1;
+}
 
 nav {
   font-size: 0.95rem;
@@ -33,13 +39,6 @@ input[type=search] {
 input[type=search]:focus {
   box-shadow: none;
   border: 2px solid #ff8800;
-}
-
-.btn {
-  background-color: #ff8800;
-  border: 2px solid #ff8800;
-  border-radius: 0 20px 20px 0;
-  color: #fdfbf1;
 }
 
 i {
@@ -57,4 +56,18 @@ aside {
 
 main {
   background-color: #fff;
+}
+
+.card-width {
+  width: 15.6rem;
+}
+
+.card {
+  overflow: hidden;
+}
+.card a img {
+  height: 12rem;
+}
+.card img:hover {
+  transform: scale(1.1);
 }

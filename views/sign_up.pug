@@ -1,0 +1,10 @@
+extends layout 
+block content 
+    h3.text-center Sign-up here
+    form(action="", method="post") 
+        .form-floating
+            input.form-control#floatingUsername(name="username")
+            label(for='floatingUsername') Username
+        .form-floating
+            input.form-control#floatingPassword(type="password" name="password")
+            label(for='floatingPassword'  ) Password

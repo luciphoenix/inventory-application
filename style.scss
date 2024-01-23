@@ -22,6 +22,12 @@ header {
       color: $search-bar-color;
     }
   }
+  .btn {
+    background-color: $search-bar-color;
+    border: 2px solid $search-bar-color;
+    border-radius: 0 20px 20px 0;
+    color: #fdfbf1;
+  }
 }
 
 nav {
@@ -36,13 +42,6 @@ input[type="search"] {
     box-shadow: none;
     border: 2px solid $search-bar-color;
   }
-}
-
-.btn {
-  background-color: $search-bar-color;
-  border: 2px solid $search-bar-color;
-  border-radius: 0 20px 20px 0;
-  color: #fdfbf1;
 }
 
 // icons
@@ -60,4 +59,19 @@ aside {
 }
 main {
   background-color: #fff;
+}
+.card-width {
+  width: 15.6rem;
+}
+.card-body {
+  // background-color: #dda78c4d;
+}
+.card {
+  overflow: hidden;
+  & a img {
+    height: 12rem;
+  }
+  & img:hover {
+    transform: scale(1.1);
+  }
 }

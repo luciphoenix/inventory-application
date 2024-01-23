@@ -4,11 +4,12 @@
  * Module dependencies.
  */
 
-const { default: mongoose } = require("mongoose");
+const { default: mongoose, connection } = require("mongoose");
 const app = require("../app");
 const debug = require("debug")("inventory-application:server");
 const http = require("http");
 
+// database connection
 mongoose.set("strictQuery", false);
 const mongoDB =
   "mongodb+srv://admin:phoenix1@cluster0.qiwauzn.mongodb.net/inventory?retryWrites=true&w=majority";
@@ -17,6 +18,7 @@ main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
   console.log("database connected .....");
+  server.listen(port);
 }
 
 /**
@@ -35,8 +37,6 @@ const server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-
-server.listen(port);
 server.on("error", onError);
 server.on("listening", onListening);
 
