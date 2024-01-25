@@ -4,5 +4,6 @@ const userController = require("../controllers/userContoller");
 
 /* GET users listing. */
 router.get("/sign-up", userController.sign_up_get);
+router.post("/sign-up", userController.sign_up_post);
 
 module.exports = router;
