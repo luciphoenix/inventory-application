@@ -4,12 +4,58 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
+// model
+const User = require("./models/user");
+
+// modules
+const passport = require("passport");
+const session = require("express-session");
+const LocalStrategy = require("passport-local").Strategy;
+
 // routers
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const inventoryRouter = require("./routes/inventory");
 
 const app = express();
+
+// authentication
+
+passport.use(
+  new LocalStrategy(async (username, password, done) => {
+    try {
+      const user = await User.findOne({ username: username });
+      if (!user) {
+        return done(null, false, { message: "user do not exist" });
+      }
+      if (user.password !== password) {
+        return done(null, false, { message: "Password do no match" });
+      }
+      return done(null, user);
+    } catch (err) {
+      console.err(err);
+    }
+  })
+);
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await User.findById(id).exec();
+    done(null, user);
+  } catch (err) {
+    console.err(err);
+  }
+});
+app.use(session({ secret: "cats", resave: false, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

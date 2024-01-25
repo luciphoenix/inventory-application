@@ -2,7 +2,13 @@ extends layout
 
 block content
   .container-xxl
-  h1.text-center= title
+  //- Authentication of name
+  h1.text-center #{name}
+    if currentUser
+      if currentUser.username === name 
+        a(href='users/log-out')  logout
+
+
   p.text-center Welcome to #{title}
   .d-flex.gap-4.flex-wrap
     each val in items
