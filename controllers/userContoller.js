@@ -30,3 +30,7 @@ exports.log_out_get = asyncHandler((req, res, next) => {
     res.redirect("/");
   });
 });
+exports.cart_get = asyncHandler((req, res, next) => {
+  console.log(req.user);
+  res.render("cart_page");
+});

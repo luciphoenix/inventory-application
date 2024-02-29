@@ -14,7 +14,7 @@ block content
     each val in items
       .card.card-width.rounded-3
         a(href=val.url)
-          img.card-img-top(src="/images/medical_equipment_61dcd9d58f.jpg")
+          img.card-img-top(src=`/images/${val.name.replace(' ','-')}.jpg`)
         .card-body 
           .card-title= val.name
           .card-text= val.description

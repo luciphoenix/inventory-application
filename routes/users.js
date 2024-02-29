@@ -10,5 +10,6 @@ router.post("/sign-up", userController.sign_up_post);
 router.get("/log-in", userController.log_in_get);
 router.post("/log-in", userController.log_in_post);
 router.get("/log-out", userController.log_out_get);
+router.get("/cart", userController.cart_get);
 
 module.exports = router;
