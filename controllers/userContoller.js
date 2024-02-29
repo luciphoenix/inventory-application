@@ -31,6 +31,7 @@ exports.log_out_get = asyncHandler((req, res, next) => {
   });
 });
 exports.cart_get = asyncHandler((req, res, next) => {
-  console.log(req.user);
+  console.log(req.user === undefined);
+  if (req.user === undefined) res.redirect("/users/log-in");
   res.render("cart_page");
 });
