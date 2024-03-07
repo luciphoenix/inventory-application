@@ -4,7 +4,7 @@ const Item = require("../models/item");
 
 exports.allItems = asyncHandler(async (req, res, next) => {
   const items = await Item.find().sort({ name: 1 }).exec();
-  const name = req.user ? req.user.username : "Inventory Application";
+  const name = req.user ? req.user.f_name : "Inventory Application";
   res.render("index", { title: "Inventory Application", items, name });
 });
 

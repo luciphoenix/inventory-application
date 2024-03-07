@@ -5,7 +5,7 @@ block content
   //- Authentication of name
   h1.text-center #{name}
     if currentUser
-      if currentUser.username === name 
+      if currentUser.f_name === name 
         a(href='users/log-out')  logout
 
 
