@@ -24,7 +24,7 @@ const app = express();
 passport.use(
   new LocalStrategy(async (username, password, done) => {
     try {
-      const user = await User.findOne({ username: username });
+      const user = await User.findOne({ email: username });
       if (!user) {
         return done(null, false, { message: "user do not exist" });
       }
